@@ -1,0 +1,12 @@
+<template [ngIf]='todo'>
+    <input [(ngModel)]="todo.title" >
+    <textarea [(ngModel)]="todo.content"></textarea>
+    <nav>
+        <button (click)="toggle(todo)">{{ todo.done ? 'redo' : 'archive'}}</button>
+        <button (click)="remove(todo)">remove</button>
+        <span [hidden]="clean">
+            <button (click)="cancel()">cancel</button>
+            <button (click)="save()">save</button>
+        </span>
+    </nav>
+</template>

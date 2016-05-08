@@ -1,0 +1,15 @@
+<h1>todo-app</h1>
+<button (click)="sort = 'all'">all ({{ todos.length }})</button>
+<button (click)="sort = 'todo'">todo ({{ todos.length - archived }})</button>
+<button (click)="sort = 'done'">done ({{ archived }})</button>
+<label>grid</label>
+<input [(ngModel)]="smallLayout" type="checkbox">
+<ul [class.small]="smallLayout">
+  <todo
+      *ngFor='let todo of todos | todo:sort'
+      [class.done]="todo.done && sort === 'all'"
+      (removed)="remove(todo)"
+      [todo]='todo'>
+  </todo>
+</ul>
+<todo-creator></todo-creator>

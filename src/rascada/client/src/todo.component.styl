@@ -1,0 +1,35 @@
+@import '~simple-look/src/core/shadow'
+@import '~simple-look/src/core/clean'
+@import "~flexstyl/flex"
+
+input, textarea
+  clean()
+
+input
+  margin .25em 0
+  font-weight bold
+  font-size 1.5em
+
+:host
+  shadow .4
+  padding .5em
+  margin .5em 0
+  display block
+  background #fff
+
+  flex styl
+  flex grow
+  flex column
+
+  &.done
+    opacity .5
+
+.small
+  :host
+    margin 1em
+
+nav
+  margin-left auto
+
+h2, p
+  margin .25em 0
